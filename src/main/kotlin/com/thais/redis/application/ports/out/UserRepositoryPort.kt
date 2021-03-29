@@ -4,5 +4,5 @@ import com.thais.redis.application.domain.User
 
 interface UserRepositoryPort {
 
-    fun getUserById(id: Long): User
+    fun getById(id: Long): User?
 }

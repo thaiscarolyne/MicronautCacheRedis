@@ -1,21 +1,20 @@
 package com.thais.redis.adapter.out.database.postgres.entity
 
 import com.thais.redis.application.domain.User
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.Table
+import javax.persistence.*
+import javax.validation.constraints.NotNull
 
 @Entity
-@Table(name = "USER")
+@Table(name = "USERS")
 data class UserEntity(
-    @Column
-    @GeneratedValue
-    val id: Long,
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    val id: Long = 0L,
 
+    @NotNull
     @Column
-    val name: String
-) {
+    val name: String = ""
+){
     fun toDomain(): User {
         return User(id, name)
     }

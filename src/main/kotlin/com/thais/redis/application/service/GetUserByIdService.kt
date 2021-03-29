@@ -7,7 +7,7 @@ import javax.inject.Singleton
 
 @Singleton
 class GetUserByIdService(private val userRepositoryPort: UserRepositoryPort): GetUserByIdUseCase {
-    override fun execute(id: Long): User {
-        return userRepositoryPort.getUserById(id)
-    }
+    override fun execute(id: Long): User =
+        userRepositoryPort.getById(id)
+            ?: throw Exception("No user with this id was found!")
 }

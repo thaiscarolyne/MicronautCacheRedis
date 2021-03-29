@@ -37,9 +37,10 @@ dependencies {
     implementation("io.micronaut.cache:micronaut-cache-core")
     implementation("io.micronaut.redis:micronaut-redis-lettuce")
 
-    annotationProcessor("io.micronaut.data:micronaut-data-processor:2.2.4")
-    implementation("io.micronaut.data:micronaut-data-hibernate-jpa:2.2.4")
-    runtimeOnly("org.postgresql:postgresql:$postgresVersion")
+    annotationProcessor("io.micronaut.data:micronaut-data-processor")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    implementation("io.micronaut.data:micronaut-data-hibernate-jpa")
+    runtimeOnly("org.postgresql:postgresql")
 
 }
 
