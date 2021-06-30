@@ -16,3 +16,4 @@ open class GetUserByIdService(private val userRepositoryPort: UserRepositoryPort
         userRepositoryPort.getById(id)
             ?: throw Exception("No user with this id was found!")
 }
+

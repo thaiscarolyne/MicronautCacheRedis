@@ -46,6 +46,8 @@ dependencies {
     implementation("io.micronaut.redis:micronaut-redis-lettuce")
 
     runtimeOnly("org.postgresql:postgresql")
+
+    testImplementation("io.mockk:mockk:1.9.3")
 }
 
 
